@@ -4,7 +4,7 @@ from pygame.sprite import Sprite
 class Gun(Sprite):
 
     def __init__(self, screen):
-        """инициализация пушки"""
+        """Init GUN_Avocado"""
         super(Gun, self).__init__()
         self.screen = screen
         self.image = pygame.image.load('images/avo.png')
@@ -17,11 +17,11 @@ class Gun(Sprite):
         self.mleft = False
 
     def output(self):
-        """Пушка"""
+        """GUN"""
         self.screen.blit(self.image, self.rect)
 
     def update_gun(self):
-        """обновление позиции пушки"""
+        """Updating the gun position"""
         if self.mright and self.rect.right < self.screen_rect.right:
             self.center += 1.5
         if self.mleft and self.rect.left > 0:
@@ -30,5 +30,5 @@ class Gun(Sprite):
         self.rect.centerx = self.center
 
     def create_gun(self):
-        """размещение пушки по центру внизу экрана"""
+        """Placing the gun in the center at the bottom of the screen"""
         self.center = self.screen_rect.centerx
